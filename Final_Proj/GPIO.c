@@ -33,7 +33,7 @@ void config_GPIO(){
     P1->SEL0 |= BIT2 | BIT3;                // set 2-UART pin as secondary function
 
 
-
+    //Test change to file with github
 
 
 
