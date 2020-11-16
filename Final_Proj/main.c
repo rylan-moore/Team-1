@@ -23,13 +23,13 @@ config_GPIO();
     //config uart
     config_UART();
         //config timerA0
-        config_TA0();
+        config_TA1();
 
     __enable_irq();             // Enables interrupts to the system
 
     NVIC->ISER[1] = 1 << ((PORT5_IRQn) & 31);       // Very important to assign interrupts to the NVIC vector otherwise they would not
                                                     // considered
-    NVIC->ISER[0] = 1 << ((TA0_0_IRQn) & 31);
+    NVIC->ISER[0] = 1 << ((TA1_0_IRQn) & 31);
     //    __low_power_mode_3();
     //    __no_operation();
 
@@ -64,7 +64,7 @@ void PORT5_IRQHandler(void)
         if(!(P5->IES & BIT2)) // is this the rising edge?
         {
 
-            TIMER_A0->CTL |= TIMER_A_CTL_CLR;   // clears timer A
+            TIMER_A1->CTL |= TIMER_A_CTL_CLR;   // clears timer A
             miliseconds = 0;
             P5->IES |=  BIT2;  //falling edge
         }
@@ -79,11 +79,11 @@ void PORT5_IRQHandler(void)
     }
 }
 
-void TA0_0_IRQHandler(void)
+void TA1_0_IRQHandler(void)
 {
     //    Interrupt gets triggered for every clock cycle in SMCLK Mode counting number of pulses
     miliseconds++;
-    TIMER_A0->CCTL[0] &= ~TIMER_A_CCTLN_CCIFG;
+    TIMER_A1->CCTL[0] &= ~TIMER_A_CCTLN_CCIFG;
     //    printf("milliseconds: "+miliseconds);
 }
 

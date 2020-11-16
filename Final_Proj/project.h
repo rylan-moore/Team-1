@@ -8,7 +8,7 @@
 #ifndef PROJECT_H_
 #define PROJECT_H_
 
-void config_TA0();
+void config_TA1();
 void US_trigger();
 void US_echo();
 static void Delay(uint32_t loop);
