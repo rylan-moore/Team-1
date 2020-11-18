@@ -6,6 +6,7 @@
  *  Created on: Nov 2, 2020
  *      Author: rylan
  */
+extern int miliseconds;
 void config_TA0(){
 //        /*              TIMER A1            */
 //    TIMER_A0->CCTL[0]= TIMER_A_CCTLN_CCIE;   //Enable the interrupt for CCR0
@@ -26,5 +27,12 @@ void config_TA0(){
 
     __NVIC_EnableIRQ(TA0_0_IRQn);
 }
+void TA0_0_IRQHandler(void)
+{
+    //    Interrupt gets triggered for every clock cycle in SMCLK Mode counting number of pulses
+    miliseconds++;
+    TIMER_A0->CCTL[0] &= ~TIMER_A_CCTLN_CCIFG;
+}
+
 
 

@@ -7,7 +7,7 @@
 #include "msp.h"
 #include "project.h"
 
-
+extern int p_distance;
     void ADC_config2(void){
         ADC14->CTL0 = 0;
             // sets adc on, uses smclk, single sample mode, 32  cycles for hold time, predidvides clk by 16
@@ -45,6 +45,15 @@
     }
     void ADC_run(void){
         ADC14->CTL0 |= ADC14_CTL0_SC  | ADC14_CTL0_ENC;
+    }
+    void ADC14_IRQHandler(void){
+
+        ADC14->CLRIFGR0 |=ADC14_CLRIFGR0_CLRIFG0;        //clears the interrupt flag
+        p_distance = ADC14->MEM[0];                       //loads conversion result into variable
+        char buff2[50];
+        sprintf(buff2,"p_distance is %d " ,p_distance);         //debug prints
+        uart_out(buff2);
+
     }
 
 
