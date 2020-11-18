@@ -11,7 +11,7 @@ GEN_CMDS__FLAG :=
 
 ORDERED_OBJS += \
 "./GPIO.obj" \
-"./TimerA0.obj" \
+"./TimerA1.obj" \
 "./UART.obj" \
 "./US.obj" \
 "./main.obj" \
@@ -161,8 +161,8 @@ Final\ Full\ implementation\ -\ Team1.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "GPIO.obj" "TimerA0.obj" "UART.obj" "US.obj" "main.obj" "potentiometer.obj" "startup_msp432p401r_ccs.obj" "system_msp432p401r.obj" 
-	-$(RM) "GPIO.d" "TimerA0.d" "UART.d" "US.d" "main.d" "potentiometer.d" "startup_msp432p401r_ccs.d" "system_msp432p401r.d" 
+	-$(RM) "GPIO.obj" "TimerA1.obj" "UART.obj" "US.obj" "main.obj" "potentiometer.obj" "startup_msp432p401r_ccs.obj" "system_msp432p401r.obj" 
+	-$(RM) "GPIO.d" "TimerA1.d" "UART.d" "US.d" "main.d" "potentiometer.d" "startup_msp432p401r_ccs.d" "system_msp432p401r.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

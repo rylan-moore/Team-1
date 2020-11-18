@@ -10,7 +10,7 @@ CMD_SRCS += \
 
 C_SRCS += \
 ../GPIO.c \
-../TimerA0.c \
+../TimerA1.c \
 ../UART.c \
 ../US.c \
 ../main.c \
@@ -20,7 +20,7 @@ C_SRCS += \
 
 C_DEPS += \
 ./GPIO.d \
-./TimerA0.d \
+./TimerA1.d \
 ./UART.d \
 ./US.d \
 ./main.d \
@@ -30,7 +30,7 @@ C_DEPS += \
 
 OBJS += \
 ./GPIO.obj \
-./TimerA0.obj \
+./TimerA1.obj \
 ./UART.obj \
 ./US.obj \
 ./main.obj \
@@ -40,7 +40,7 @@ OBJS += \
 
 OBJS__QUOTED += \
 "GPIO.obj" \
-"TimerA0.obj" \
+"TimerA1.obj" \
 "UART.obj" \
 "US.obj" \
 "main.obj" \
@@ -50,7 +50,7 @@ OBJS__QUOTED += \
 
 C_DEPS__QUOTED += \
 "GPIO.d" \
-"TimerA0.d" \
+"TimerA1.d" \
 "UART.d" \
 "US.d" \
 "main.d" \
@@ -60,7 +60,7 @@ C_DEPS__QUOTED += \
 
 C_SRCS__QUOTED += \
 "../GPIO.c" \
-"../TimerA0.c" \
+"../TimerA1.c" \
 "../UART.c" \
 "../US.c" \
 "../main.c" \

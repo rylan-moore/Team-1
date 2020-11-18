@@ -15,7 +15,7 @@ void config_UART();
 void gpio_interrput();
 void ADC_run(void);
 void config_GPIO();
-void config_TA0();
+void config_TA1();
 void uart_out(const char *str);
 void ADC_config1(void);
 void ADC_config2(void);

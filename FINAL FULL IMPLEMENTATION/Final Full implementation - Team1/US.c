@@ -15,7 +15,7 @@ extern int miliseconds;
 {
     volatile uint32_t i;
 
-    for (i = 0 ; i < 48 * loop ; i++);
+    for (i = 0 ; i < loop ; i++);
 }
 
 
@@ -30,7 +30,7 @@ void US_echo(){
     P5->IFG = 0;              // clear P2 interrupt
     P5->IES &= ~BIT2;         // rising edge on ECHO pin
     Delay(30000);             // delay for 30ms (after this time echo times out if there is no object detected) Allows the P5.2 interrupt to run
-    distance = sensor/58;     // converting ECHO length in cm
+    distance = sensor/58/2;     // converting ECHO length in cm
 }
 void PORT5_IRQHandler(void)
 {
@@ -38,7 +38,7 @@ void PORT5_IRQHandler(void)
     {
         if(!(P5->IES & BIT2))                   // is this the rising edge of the Echo
         {
-            TIMER_A0->CTL |= TIMER_A_CTL_CLR;   // clears timer A
+            TIMER_A1->CTL |= TIMER_A_CTL_CLR;   // clears timer A
             miliseconds = 0;                    // start counting time of the pulse
             P5->IES |=  BIT2;                   // reset to falling edge
         }

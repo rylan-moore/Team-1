@@ -1,4 +1,34 @@
 
+/* ECEN 2440 - F2020 - Team 1
+ *
+ * Team members:
+ * Rylan Moore
+ * Alexis Palau
+ * Aidan Rogers
+ * Abiel Tewolde
+ *
+ * PINS USED: ~~~~~~~~~~~~~~~~~~~~~
+ * US - ECHO -> P5.2
+ * US - TRIG -> P5.0
+ * Potentiometer -> P6.0
+ * ADC HR -> 5.6 (3v3)
+ * ADC LR -> 5.7 (GND)
+ * WIFI :
+ *       ESP8266.TX -> P3.2
+ *       ESP8266.RX -> P3.3
+ *       Enable Pin -> 3v3
+ *       Also:
+ *       3v3 supply
+ *       GND
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * Sources: ~~~~~~~~~~~~~~~~~~~~~~~
+ * TI Resource explorer helped us with UART driver
+ *
+ * Guide for using interrupts to get US data:
+ * github.com/ChandraKiranSaladi/MSP432-Ultraosnic-UART/blob/master/SMP432-Ultrasonic.c
+ *
+ * */
+
 #include "msp.h"
 #include <stdint.h>
 #include "project.h"
@@ -28,7 +58,7 @@ int main(void)
 
 config_UART();
 config_GPIO();
-config_TA0();
+config_TA1();
 gpio_interrput();
 __enable_irq();             // Enables interrupts to the system
 state = 1;
