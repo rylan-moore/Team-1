@@ -1,1 +1,0 @@
-"./GPIO.obj" "./TimerA1.obj" "./UART.obj" "./US.obj" "./main.obj" "./potentiometer.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd" -llibc.a 
