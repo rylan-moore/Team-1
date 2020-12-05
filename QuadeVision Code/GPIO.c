@@ -33,6 +33,9 @@ void config_GPIO(){
     P1->SEL0 |= BIT2;
     P1->SEL0 |= BIT3;
 
+    P3->SEL0 |= BIT2; //for uartw
+    P3->SEL0 |= BIT3;
+
 }
 
 void gpio_interrput(){

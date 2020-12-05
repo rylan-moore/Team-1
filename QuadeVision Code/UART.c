@@ -10,8 +10,8 @@
 
 void config_UART(){
     /*
-     * we modified the TI driver to use UART at a baud rate of 115200 in hopes of then outputting over the UART pins, which would be connected to the wifi module.
-     * Pins 3.3 and 3.2 use EUSCI_A1
+     * we modified the TI driver to use UART at a baud rate of 115200. This outputs to a serial monitor
+     *
      * */
 
     /*         UART                      */ //Adapted from source link in main.c which got their code from -> MSP432P401 Demo - eUSCI_A0 UART echo at 9600 baud using BRCLK = 12MHz by Ti

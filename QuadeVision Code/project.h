@@ -22,7 +22,8 @@ void ADC_config2(void);
 void GPIO_ADC_config1(void);
 void ADC_NVIC_setup(void);
 int uart_puts(const char *str);
-
+void uart_outW(const char *str);
+void config_UARTW();
 
 
 
